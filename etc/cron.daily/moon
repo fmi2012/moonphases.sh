@@ -1,0 +1,32 @@
+#!/bin/sh
+
+echo Updateing Moonphase
+
+#Standardverzeichniss, wenn keines in der Komandozeile eingegeben wird.
+if [ ! $1 ]; then
+ DIRECTORY="/var/local/moon"
+else
+ DIRECTORY=$1
+fi
+
+#Letzter Update als Textdatei.
+echo last Moon Update > $DIRECTORY/lastMoonUpdate.txt
+/bin/date >> $DIRECTORY/lastMoonUpdate.txt
+
+#Mondphasengrafik erzeugen.
+/usr/bin/pngphoon -h 1000 -w 1000 -f $DIRECTORY/moon.png
+
+#mondphase für die vorschau verkleinern. 
+convert -size 200x200 $DIRECTORY/moon.png $DIRECTORY/moon.smaal.png
+
+#HTML Datei  erzeugen aus template.
+#märz-problem
+date | sed -e "s/ä/\\\\\&auml/" > $DIRECTORY/date.tmp
+
+sed -e "s/{actual}/$( cat $DIRECTORY/date.tmp )/" \
+     < $DIRECTORY/moon.html.template \
+     > $DIRECTORY/moon.html
+     
+rm $DIRECTORY/date.tmp
+
+echo Updated Moonphase

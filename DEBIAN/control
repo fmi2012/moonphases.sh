@@ -1,0 +1,10 @@
+Package: moonphases.fmi
+Version: 1.1.korrektur1
+Section: frieder
+Priority: optional
+Architecture: all
+Essential: no
+Depends: pngphoon, cron
+Installed-Size: 2
+Maintainer: Frieder <fmi2012@gmx.de>
+Description: Stellt die mondphase Graphisch auf einer HTML-Seite dar-. Die Adresse der HTML-Datei ist "file:///var/local/share/moon/moon.html". Die Datei ist leicht mit einem Lesezeichen im Browser Abrufbar.
