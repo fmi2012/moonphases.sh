@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE article PUBLIC "-//OASIS/DTD DocBook XML V4.4//EN"
+"http://www.docbook.org/xml/4.4/docbookx.dtd">
+
+<article lang="de">
+	<articleinfo>
+		<title> moonphases.sh </title>
+	</articleinfo>
+	<sect1>
+		<title> Installation </title>
+		<sect2>
+			<title> Voraussetzungen </title>
+			<para>
+			Für das Script werden die Pakete pngphoon und cron
+			benötigt. Zudem muss cron die Scripte in /etc/cron.dayli
+			einmal täglich ausführen. Das Script erwartet eine
+			Bourne-Shell im pfad /bin/sh.
+			</para>
+		</sect2>
+		<sect2>
+			<title>Debian (dpkg)</title>
+			<para>
+			In Debian you can use the dpkg-command to build the package:
+			cd /where/you/saved/the/repository
+			dpkg -b DebianPackage
+			jetzt ist im Aktuellen Verzeichniss eine neue Datei mit dem
+			Namen moonphases.sh.deb
+			dieses kann nun mit
+			sudo dpkg -i moonphases.sh.deb
+			installiert werden.
+			</para>
+		</sect2>
+		<sect2>
+			<title> Andere Unixoide Systeme </title>
+			<para>
+				Wenn die Systemvoraussetzungen erfüllt sind, können
+				die Entsprechenden Dateien auch Händisch an die 
+				Zielpositionen Kopiert werden.
+			</para>
+		</sect2>
+	</sect1>
+	<sect1>
+		<title> Anwendung </title>
+		<para>
+			Das Shell-Script wird bei korrekter Installation einmal
+			Täglich Aufgerufen. Das Script erzeugt eine einfache
+			html-Seite die in die Favoriten des bevorzugten Browsers
+			Aufgenommen werden kann. (Oder per Webserver in das
+			Inter-/Intranet übertragen werden kann. 
+			Bei lokalem Abruf ist die Webseite unter
+			file:///var/local/moon/moon.html
+			abrufbar. Wer sich Mondsüchtig fühlt kann also hier
+			überprüfen ob Eventuell Vollmond ist.
+		</para>
+	</sect1>
+	
+</article>
